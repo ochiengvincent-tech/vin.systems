@@ -223,7 +223,7 @@ export default function Home() {
           <div className="reveal delay-1">
             <div className="hero-brand">vin.systems</div>
             <h1 className="hero-name">
-              VINCENT<span>OCHIENG</span>
+              VINCENT<span>OOKO OCHIENG</span>
             </h1>
             <p className="eyebrow mb-6">FULL-STACK SOFTWARE ENGINEER</p>
             <p className="hero-statement">
