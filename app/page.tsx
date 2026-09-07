@@ -2,6 +2,7 @@ import { FileText, Mail, MessageCircle, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
+import BackToTop from "@/components/BackToTop";
 import CaseStudy from "@/components/CaseStudy";
 import ContactForm from "@/components/ContactForm";
 import SectionRail from "@/components/SectionRail";
@@ -189,6 +190,7 @@ export default function Home() {
   return (
     <div className="system-shell">
       <SectionRail />
+      <BackToTop />
 
       <header className="nav-wrap">
         <nav className="nav-inner" aria-label="Primary navigation">

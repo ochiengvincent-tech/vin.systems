@@ -400,6 +400,56 @@ body.light-mode .footer-brand {
   box-shadow: 0 0 10px color-mix(in srgb, var(--signal) 55%, transparent);
 }
 
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line-strong, var(--line));
+  padding: 9px 11px;
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+  color: var(--paper);
+  font:
+    10px var(--font-space-mono),
+    monospace;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--signal);
+  border-color: var(--signal);
+  color: #fff;
+  outline: none;
+}
+
+body.light-mode .back-to-top {
+  background: color-mix(in srgb, var(--surface-raised) 92%, transparent);
+}
+
+body.light-mode .back-to-top:hover,
+body.light-mode .back-to-top:focus-visible {
+  background: var(--signal);
+  color: #fffaf2;
+}
+
 .nav-wrap {
   position: fixed;
   top: 0;
@@ -1837,6 +1887,11 @@ footer {
     padding: 24px 22px;
   }
 
+  .back-to-top {
+    right: 18px;
+    bottom: 18px;
+  }
+
   .thanks-page {
     padding: 32px 22px;
   }
@@ -1863,7 +1918,8 @@ footer {
   }
 
   .action,
-  .work-row {
+  .work-row,
+  .back-to-top {
     transition: none;
   }
 }
