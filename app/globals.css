@@ -353,6 +353,10 @@ body.light-mode .lab-row .section-status {
   cursor: pointer;
   transition: 0.25s ease;
 }
+.hero-action {
+  max-width: 100%;
+  white-space: nowrap;
+}
 .action:hover {
   background: var(--signal);
   border-color: var(--signal);
@@ -1033,6 +1037,7 @@ footer {
 }
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 17px;
 }
 .footer-links a {
@@ -1219,6 +1224,10 @@ footer {
     align-items: start;
     flex-direction: column;
     margin-top: 40px;
+  }
+  .hero-action {
+    width: 100%;
+    justify-content: space-between;
   }
   .about-grid,
   .system-layout,

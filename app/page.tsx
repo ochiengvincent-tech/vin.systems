@@ -12,6 +12,7 @@ import Image from "next/image";
 const email = "ookovincent616@gmail.com";
 const emailLink = `https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=cm&to=${encodeURIComponent(email)}`;
 const whatsappLink = "https://wa.me/254727664787";
+const resumeHref = "/Vincent%20Ooko%20Ochieng%20-%20Resume.pdf";
 const currentYear = new Date().getFullYear();
 
 const metadataItems = [
@@ -70,6 +71,7 @@ const certificationItems = [
   ["Software Engineering Certificate", "REDUZER TRAINING INSTITUTE / 2026"],
   ["Digital Marketing Certificate", "ALEPH DIGITAL ACADEMY / 2023"],
   ["CyberOps Associate", "CISCO NETWORKING ACADEMY / 2024"],
+  ["KCSE", "2018"],
 ];
 
 const toolingItems = [
@@ -164,9 +166,9 @@ const footerLinks: LinkItem[] = [
   },
   {
     label: "Download Resume",
-    href: "/resume.pdf",
+    href: resumeHref,
     icon: <FileText size={14} strokeWidth={1.8} />,
-    download: "Vincent-Ochieng-Resume.pdf",
+    download: "Vincent-Ooko-Ochieng-Resume.pdf",
   },
   {
     label: "Email",
@@ -241,8 +243,8 @@ export default function Home() {
             </a>
             <a
               className="action hero-action"
-              href="/resume.pdf"
-              download="Vincent-Ochieng-Resume.pdf"
+              href={resumeHref}
+              download="Vincent-Ooko-Ochieng-Resume.pdf"
             >
               DOWNLOAD RESUME &darr;
             </a>
@@ -271,15 +273,16 @@ export default function Home() {
               <Image
                 className="portrait"
                 src="/vincent-ochieng.png"
-                alt="Portrait of Vincent Ochieng"
+                alt="Portrait of Vincent Ooko Ochieng"
                 width={800}
                 height={600}
+                sizes="(max-width: 800px) 100vw, 55vw"
                 loading="lazy"
               />
               <div className="subject-tag">
                 SUBJECT_001
                 <br />
-                VINCENT OCHIENG
+                VINCENT OOKO OCHIENG
                 <br />
                 FULL-STACK ENGINEER
                 <br />

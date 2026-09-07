@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Work_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vin.systems";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vin-systems.vercel.app";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -19,13 +20,13 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vincent Ochieng | Full-Stack Software Engineer",
-    template: "%s | Vincent Ochieng",
+    default: "Vincent Ooko Ochieng | Full-Stack Software Engineer",
+    template: "%s | Vincent Ooko Ochieng",
   },
   description:
-    "Vincent Ochieng is a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
+    "Vincent Ooko Ochieng is a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
   keywords: [
-    "Vincent Ochieng",
+    "Vincent Ooko Ochieng",
     "full-stack software engineer",
     "software engineer Kenya",
     "backend engineer",
@@ -36,30 +37,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  authors: [{ name: "Vincent Ochieng", url: siteUrl }],
-  creator: "Vincent Ochieng",
+  authors: [{ name: "Vincent Ooko Ochieng", url: siteUrl }],
+  creator: "Vincent Ooko Ochieng",
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "vin.systems",
-    title: "Vincent Ochieng | Full-Stack Software Engineer",
+    title: "Vincent Ooko Ochieng | Full-Stack Software Engineer",
     description:
-      "Portfolio of Vincent Ochieng, a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
+      "Portfolio of Vincent Ooko Ochieng, a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
     locale: "en_KE",
     images: [
       {
         url: "/vincent-ochieng.png",
         width: 800,
         height: 600,
-        alt: "Vincent Ochieng, full-stack software engineer",
+        alt: "Vincent Ooko Ochieng, full-stack software engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vincent Ochieng | Full-Stack Software Engineer",
+    title: "Vincent Ooko Ochieng | Full-Stack Software Engineer",
     description:
-      "Portfolio of Vincent Ochieng, a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
+      "Portfolio of Vincent Ooko Ochieng, a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
     images: ["/vincent-ochieng.png"],
   },
   robots: {
@@ -98,7 +99,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Vincent Ochieng",
+              name: "Vincent Ooko Ochieng",
               url: siteUrl,
               image: `${siteUrl}/vincent-ochieng.png`,
               jobTitle: "Full-Stack Software Engineer",
