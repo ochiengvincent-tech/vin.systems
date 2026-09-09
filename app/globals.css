@@ -24,7 +24,7 @@ body {
   min-height: 100vh;
   background: var(--ink);
   color: var(--paper);
-  font-family: var(--font-work-sans), sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   overflow-x: hidden;
 }
 
@@ -623,7 +623,7 @@ section {
 
 .hero-brand {
   font:
-    700 clamp(1rem, 1.3vw, 1.25rem)/1 var(--font-work-sans),
+    700 clamp(1rem, 1.3vw, 1.25rem)/1 var(--font-space-grotesk),
     sans-serif;
   letter-spacing: 0;
   position: relative;
@@ -645,7 +645,7 @@ section {
 
 .hero-name {
   font:
-    800 clamp(2rem, 3vw, 3rem)/0.95 var(--font-work-sans),
+    800 clamp(2rem, 3vw, 3rem)/0.95 var(--font-space-grotesk),
     sans-serif;
   letter-spacing: 0;
   margin: 26px 0 34px;
@@ -659,7 +659,7 @@ section {
 
 .hero-statement {
   font:
-    600 clamp(1rem, 1.3vw, 1.25rem)/1.1 var(--font-work-sans),
+    600 clamp(1rem, 1.3vw, 1.25rem)/1.1 var(--font-space-grotesk),
     sans-serif;
   max-width: 670px;
   letter-spacing: 0;
@@ -739,7 +739,7 @@ section {
 
 .section-title {
   font:
-    800 clamp(1.9rem, 3.2vw, 3.2rem)/0.98 var(--font-work-sans),
+    800 clamp(1.9rem, 3.2vw, 3.2rem)/0.98 var(--font-space-grotesk),
     sans-serif;
   letter-spacing: 0;
   margin: 24px 0 56px;
@@ -978,7 +978,7 @@ section {
 
 .project-title {
   font:
-    800 clamp(1.8rem, 3.2vw, 3.2rem)/0.98 var(--font-work-sans),
+    800 clamp(1.8rem, 3.2vw, 3.2rem)/0.98 var(--font-space-grotesk),
     sans-serif;
   letter-spacing: 0;
   margin: 25px 0;
@@ -1275,7 +1275,7 @@ section {
 
 .contact h2 {
   font:
-    800 clamp(2.2rem, 4vw, 4.2rem)/0.96 var(--font-work-sans),
+    800 clamp(2.2rem, 4vw, 4.2rem)/0.96 var(--font-space-grotesk),
     sans-serif;
   letter-spacing: 0;
   max-width: 1100px;
@@ -1468,7 +1468,7 @@ section {
   max-width: 700px;
   margin: 0;
   font:
-    800 clamp(2.4rem, 6vw, 5rem)/0.98 var(--font-work-sans),
+    800 clamp(2.4rem, 6vw, 5rem)/0.98 var(--font-space-grotesk),
     sans-serif;
   letter-spacing: 0;
 }
@@ -1579,7 +1579,7 @@ footer {
 
 .case-file h2 {
   font:
-    800 clamp(2rem, 3.5vw, 3.5rem)/0.96 var(--font-work-sans),
+    800 clamp(2rem, 3.5vw, 3.5rem)/0.96 var(--font-space-grotesk),
     sans-serif;
   letter-spacing: 0;
   margin: 25px 0 50px;

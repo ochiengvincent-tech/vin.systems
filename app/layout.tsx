@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Work_Sans, Space_Mono } from "next/font/google";
+import { Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://vin-systems.vercel.app";
 
-const workSans = Work_Sans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-work-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
 });
 
 const spaceMono = Space_Mono({
@@ -90,7 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${workSans.variable} ${spaceMono.variable}`}
+        className={`${spaceGrotesk.variable} ${spaceMono.variable}`}
         suppressHydrationWarning
       >
         <script
@@ -128,7 +128,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (window.localStorage.getItem("theme") === "light") {
+                const savedTheme = window.localStorage.getItem("theme");
+
+                if (savedTheme === "light") {
                   document.body.classList.add("light-mode");
                 }
               } catch {}

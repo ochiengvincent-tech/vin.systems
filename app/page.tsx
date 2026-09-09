@@ -72,7 +72,6 @@ const certificationItems = [
   ["Software Engineering Certificate", "REDUZER TRAINING INSTITUTE / 2026"],
   ["Digital Marketing Certificate", "ALEPH DIGITAL ACADEMY / 2023"],
   ["CyberOps Associate", "CISCO NETWORKING ACADEMY / 2024"],
-  ["KCSE", "2018"],
 ];
 
 const toolingItems = [
