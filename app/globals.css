@@ -15,6 +15,7 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
@@ -33,6 +34,7 @@ body {
 ======================================== */
 
 body.light-mode {
+  color-scheme: light;
   --ink: #e8e3d8;
   --paper: #17191a;
   --line: rgba(23, 25, 26, 0.14);

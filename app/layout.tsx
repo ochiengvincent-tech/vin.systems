@@ -128,9 +128,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const savedTheme = window.localStorage.getItem("theme");
-
-                if (savedTheme === "light") {
+                if (window.localStorage.getItem("theme") === "light") {
                   document.body.classList.add("light-mode");
                 }
               } catch {}
