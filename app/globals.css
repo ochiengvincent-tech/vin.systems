@@ -1975,6 +1975,29 @@ footer {
     min-height: 340px;
   }
 
+  .system-preview .preview-head,
+  .capstone-preview .preview-head {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .system-preview .preview-head > span:first-child,
+  .capstone-preview .preview-head > span:first-child {
+    max-width: 100%;
+  }
+
+  .system-preview .preview-head .section-status,
+  .capstone-preview .capstone-status {
+    white-space: nowrap;
+  }
+
+  .system-preview .flow,
+  .capstone-preview .capstone-flow {
+    margin-top: 24px;
+  }
+
   .system-preview {
     min-height: 300px;
     padding: 20px;

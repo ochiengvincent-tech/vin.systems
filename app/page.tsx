@@ -1,4 +1,4 @@
-import { FileText, Mail, MessageCircle, Phone } from "lucide-react";
+import { FileText, Mail, MessageCircle, Phone, Shield } from "lucide-react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -568,7 +568,12 @@ export default function Home() {
               <span>{link.label}</span>
             </TrackedLink>
           ))}
-          <Link href="/privacy">PRIVACY</Link>
+          <Link href="/privacy">
+            <span className="link-icon" aria-hidden="true">
+              <Shield size={14} strokeWidth={1.8} />
+            </span>
+            <span>PRIVACY</span>
+          </Link>
         </div>
         <div className="section-status">
           <span className="section-status-dot"></span>
