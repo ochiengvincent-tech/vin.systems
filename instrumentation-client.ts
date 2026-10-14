@@ -39,7 +39,6 @@ posthog.init(projectToken, {
   cookieless_mode: "always",
   property_denylist: [
     "$device_id",
-    "$session_id",
     "$screen_height",
     "$screen_width",
     "$viewport_height",
