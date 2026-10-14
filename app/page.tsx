@@ -1,5 +1,6 @@
 import { FileText, Mail, MessageCircle, Phone } from "lucide-react";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 import BackToTop from "@/components/BackToTop";
@@ -7,13 +8,14 @@ import CaseStudy from "@/components/CaseStudy";
 import ContactForm from "@/components/ContactForm";
 import SectionRail from "@/components/SectionRail";
 import SectionNav from "@/components/SectionNav";
+import TrackedLink from "@/components/TrackedLink";
 
 import Image from "next/image";
 
 const email = "ookovincent616@gmail.com";
 const emailLink = `mailto:${email}`;
 const whatsappLink = "https://wa.me/254727664787";
-const resumeHref = "/Vincent%20Ooko%20Ochieng%20-%20Resume.pdf";
+const resumeHref = "/Vincent-Ooko-Ochieng-CV.pdf";
 const currentYear = new Date().getFullYear();
 
 const metadataItems = [
@@ -164,7 +166,7 @@ const footerLinks: LinkItem[] = [
     label: "Download Resume",
     href: resumeHref,
     icon: <FileText size={14} strokeWidth={1.8} />,
-    download: "Vincent-Ooko-Ochieng-Resume.pdf",
+    download: "Vincent-Ooko-Ochieng-CV.pdf",
   },
   {
     label: "Email",
@@ -241,13 +243,15 @@ export default function Home() {
             <a className="action hero-action" href="#contact">
               CONTACT ME &rarr;
             </a>
-            <a
+            <TrackedLink
               className="action hero-action"
               href={resumeHref}
-              download="Vincent-Ooko-Ochieng-Resume.pdf"
+              download="Vincent-Ooko-Ochieng-CV.pdf"
+              event="resume_downloaded"
+              properties={{ placement: "hero" }}
             >
               DOWNLOAD RESUME &darr;
-            </a>
+            </TrackedLink>
             <div className="diagnostics">
               <span className="section-status">
                 <span className="section-status-dot"></span>
@@ -367,14 +371,16 @@ export default function Home() {
                 </p>
               </div>
               <div className="featured-actions capstone-actions">
-                <a
+                <TrackedLink
                   className="action"
                   href="https://github.com/ochiengvincent-tech/merchandise-management-system"
                   target="_blank"
                   rel="noopener noreferrer"
+                  event="project_source_opened"
+                  properties={{ project: "merchandise_management_system" }}
                 >
                   VIEW SOURCE &uarr;
-                </a>
+                </TrackedLink>
               </div>
             </div>
             <div className="system-preview capstone-preview">
@@ -429,14 +435,16 @@ export default function Home() {
                 </div>
                 <div className="featured-actions">
                   <CaseStudy />
-                  <a
+                  <TrackedLink
                     className="action"
                     href="https://github.com/ochiengvincent-tech/log-ingestion-engine"
                     target="_blank"
                     rel="noopener noreferrer"
+                    event="project_source_opened"
+                    properties={{ project: "log_ingestion_engine" }}
                   >
                     VIEW ON GITHUB &uarr;
-                  </a>
+                  </TrackedLink>
                 </div>
               </div>
               <p className="project-footnote">*Reported from the project’s load test; see the README for test setup and conditions.</p>
@@ -469,14 +477,16 @@ export default function Home() {
                 <div className="eyebrow">{num}</div>
                 <h3>{title}</h3>
                 <p>{copy}</p>
-                <a
+                <TrackedLink
                   className="project-link"
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  event="project_source_opened"
+                  properties={{ project: title.toLowerCase().replaceAll("-", "_").replaceAll(" ", "_") }}
                 >
                   GITHUB &uarr;
-                </a>
+                </TrackedLink>
               </article>
             ))}
           </div>
@@ -500,19 +510,24 @@ export default function Home() {
             <aside className="contact-details">
               <div className="eyebrow">DIRECT CHANNELS</div>
               {directChannelLinks.map((link) => (
-                <a
+                <TrackedLink
                   className={link.className}
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
                   aria-label={link.ariaLabel}
+                  event="contact_channel_opened"
+                  properties={{
+                    contact_method: link.label === "07276664787" ? "phone" : link.label.toLowerCase(),
+                    placement: "contact_section",
+                  }}
                   key={link.label}
                 >
                   <span className="link-icon" aria-hidden="true">
                     {link.icon}
                   </span>
                   <span>{link.label}</span>
-                </a>
+                </TrackedLink>
               ))}
             </aside>
           </div>
@@ -533,20 +548,27 @@ export default function Home() {
         </div>
         <div className="footer-links">
           {footerLinks.map((link) => (
-            <a
+            <TrackedLink
               href={link.href}
               download={link.download}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
               aria-label={link.ariaLabel}
+              event={link.download ? "resume_downloaded" : "contact_channel_opened"}
+              properties={
+                link.download
+                  ? { placement: "footer" }
+                  : { contact_method: link.label.toLowerCase(), placement: "footer" }
+              }
               key={link.label}
             >
               <span className="link-icon" aria-hidden="true">
                 {link.icon}
               </span>
               <span>{link.label}</span>
-            </a>
+            </TrackedLink>
           ))}
+          <Link href="/privacy">PRIVACY</Link>
         </div>
         <div className="section-status">
           <span className="section-status-dot"></span>

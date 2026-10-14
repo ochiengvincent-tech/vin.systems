@@ -5,6 +5,8 @@ import "./globals.css";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://vin-systems.vercel.app";
+const description =
+  "Vincent Ooko Ochieng is a Kenya-based full-stack software engineer focused on backend development with Node.js, Express, PostgreSQL, React, and Next.js.";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -24,19 +26,22 @@ const spaceMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vincent Ooko Ochieng | Full-Stack Software Engineer",
+    default:
+      "Vincent Ooko Ochieng | Backend-Focused Full-Stack Software Engineer",
     template: "%s | Vincent Ooko Ochieng",
   },
-  description:
-    "Vincent Ooko Ochieng is a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
+  description,
   keywords: [
     "Vincent Ooko Ochieng",
     "full-stack software engineer",
     "software engineer Kenya",
-    "backend engineer",
+    "backend-focused full-stack engineer",
     "TypeScript developer",
-    "Next.js developer",
     "Node.js developer",
+    "Express developer",
+    "PostgreSQL developer",
+    "React developer",
+    "Next.js developer",
   ],
   alternates: {
     canonical: "/",
@@ -47,25 +52,25 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "vin.systems",
-    title: "Vincent Ooko Ochieng | Full-Stack Software Engineer",
-    description:
-      "Portfolio of Vincent Ooko Ochieng, a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
+    title:
+      "Vincent Ooko Ochieng | Backend-Focused Full-Stack Software Engineer",
+    description,
     locale: "en_KE",
     images: [
       {
-        url: "/vincent-ochieng.png",
-        width: 800,
-        height: 600,
-        alt: "Vincent Ooko Ochieng, full-stack software engineer",
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Vincent Ooko Ochieng, backend-focused full-stack software engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vincent Ooko Ochieng | Full-Stack Software Engineer",
-    description:
-      "Portfolio of Vincent Ooko Ochieng, a Kenya-based full-stack software engineer building durable backend systems, web applications, and developer tools.",
-    images: ["/vincent-ochieng.png"],
+    title:
+      "Vincent Ooko Ochieng | Backend-Focused Full-Stack Software Engineer",
+    description,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -106,9 +111,9 @@ export default function RootLayout({
               name: "Vincent Ooko Ochieng",
               url: siteUrl,
               image: `${siteUrl}/vincent-ochieng.png`,
-              jobTitle: "Full-Stack Software Engineer",
-              description:
-                "Full-stack software engineer building durable backend systems, web applications, and developer tools.",
+              jobTitle:
+                "Backend-Focused Full-Stack Software Engineer",
+              description,
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "KE",
@@ -119,10 +124,11 @@ export default function RootLayout({
               ],
               knowsAbout: [
                 "TypeScript",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
                 "React",
                 "Next.js",
-                "Node.js",
-                "PostgreSQL",
                 "Backend systems",
               ],
             }),

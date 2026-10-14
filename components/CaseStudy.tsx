@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { portfolioAnalytics } from "./portfolioAnalytics";
 
 export default function CaseStudy() {
   const [open, setOpen] = useState(false);
@@ -13,9 +14,16 @@ export default function CaseStudy() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
 
+  function openCaseStudy() {
+    portfolioAnalytics.capture("case_study_opened", {
+      case_study: "log_ingestion_engine",
+    });
+    setOpen(true);
+  }
+
   return (
     <>
-      <button className="action mt-8" type="button" onClick={() => setOpen(true)}>
+      <button className="action mt-8" type="button" onClick={openCaseStudy}>
         VIEW CASE STUDY &rarr;
       </button>
 

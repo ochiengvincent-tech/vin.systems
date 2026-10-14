@@ -1,15 +1,19 @@
 "use client";
 
 import { useForm, ValidationError } from "@formspree/react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { portfolioAnalytics } from "./portfolioAnalytics";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xbgjoyog");
   const router = useRouter();
+  const successTracked = useRef(false);
 
   useEffect(() => {
-    if (state.succeeded) {
+    if (state.succeeded && !successTracked.current) {
+      successTracked.current = true;
+      portfolioAnalytics.capture("contact_form_submitted");
       router.replace("/thanks");
     }
   }, [router, state.succeeded]);
@@ -33,8 +37,12 @@ export default function ContactForm() {
     );
   }
 
+  function submitContactForm(event: React.FormEvent<HTMLFormElement>) {
+    handleSubmit(event);
+  }
+
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form className="contact-form" onSubmit={submitContactForm}>
       <label>
         <span>YOUR NAME</span>
         <input name="name" type="text" placeholder="Your name" required />

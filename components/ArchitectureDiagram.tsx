@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { portfolioAnalytics } from "./portfolioAnalytics";
 
 type NodeKey =
   | "typescript"
@@ -90,7 +91,10 @@ export default function ArchitectureDiagram() {
     <button
       type="button"
       className={`node ${className} ${active === key ? "selected" : ""}`}
-      onClick={() => setActive(key)}
+      onClick={() => {
+        portfolioAnalytics.capture("technology_explored", { technology: key });
+        setActive(key);
+      }}
     >
       {label}
     </button>
