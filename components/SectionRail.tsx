@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const sectionIds = ["about", "system", "work", "lab", "experience", "contact"];
+const sectionIds = ["about", "experience", "work", "system", "contact"];
 
 export default function SectionRail() {
   const [activeSection, setActiveSection] = useState<string | null>("about");

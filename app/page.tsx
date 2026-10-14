@@ -11,53 +11,49 @@ import SectionNav from "@/components/SectionNav";
 import Image from "next/image";
 
 const email = "ookovincent616@gmail.com";
-const emailLink = `https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=cm&to=${encodeURIComponent(email)}`;
+const emailLink = `mailto:${email}`;
 const whatsappLink = "https://wa.me/254727664787";
 const resumeHref = "/Vincent%20Ooko%20Ochieng%20-%20Resume.pdf";
 const currentYear = new Date().getFullYear();
 
 const metadataItems = [
-  ["CURRENT FOCUS", "BACKEND SYSTEMS / SCALE"],
-  ["LOCATION", "KENYA"],
-  ["AVAILABILITY", "OPEN TO WORK"],
+  ["ROLE", "BACKEND-FOCUSED FULL-STACK ENGINEER"],
+  ["LOCATION", "KENYA / OPEN TO REMOTE"],
+  ["AVAILABILITY", "OPEN TO SOFTWARE ENGINEERING ROLES"],
 ];
 
 const workItems = [
   {
-    num: "02",
+    num: "03",
     title: "SQL PERFORMANCE ANALYZER",
     copy: "Query-plan inspection and database performance diagnostics.",
     href: "https://github.com/ochiengvincent-tech/sql-perf-analyzer",
   },
   {
-    num: "03",
+    num: "04",
     title: "DIFF-ENGINE",
     copy: "A precise comparison engine for structured data and meaningful change.",
     href: "https://github.com/ochiengvincent-tech/diff-engine",
   },
   {
-    num: "04",
+    num: "05",
     title: "PERMISSION-MATRIX-BUILDER",
     copy: "Role-aware application permissions made inspectable and maintainable.",
     href: "https://github.com/ochiengvincent-tech/permission-matrix-builder",
   },
   {
-    num: "05",
+    num: "06",
     title: "BACKGROUND-JOB-MONITOR",
     copy: "Operational visibility for asynchronous queues and worker processes.",
     href: "https://github.com/ochiengvincent-tech/background-job-monitor",
   },
 ];
 
-const labItems = [
-  ["LAB_001", "Redis concurrency experiment", "STATUS: COMPLETE"],
-  ["LAB_002", "SQL query performance analysis", "STATUS: COMPLETE"],
-  ["LAB_003", "Distributed rate limiting", "STATUS: COMPLETE"],
-];
+
 
 const timelineItems = [
   {
-    year: "2025–PRESENT",
+    year: "SEP 2025–SEP 2026",
     title: "REDUZER TRAINING INSTITUTE / TRAINEE",
     copy: "Contributed to the Reduzer School landing page from research, positioning, copy, and responsive implementation through deployment readiness, QA, and conversion-focused iteration. Integrated PostHog analytics and a TallyForm webhook pipeline to enrich submission data for funnel tracking and analysis.",
   },
@@ -207,7 +203,6 @@ export default function Home() {
           <div className="nav-status mono text-[10px] flex items-center">
             <span className="status-dot"></span>
             <span>status: running</span>
-            <span className="ml-3 text-(--muted)">up: 2y+</span>
             <ThemeToggle />
           </div>
         </nav>
@@ -216,9 +211,9 @@ export default function Home() {
       <main>
         <section id="top" className="hero">
           <div className="hero-top reveal">
-            <div className="eyebrow">SYSTEM ONLINE</div>
+            <div className="eyebrow">SOFTWARE ENGINEER · KENYA</div>
             <div className="build-meta mono text-[10px] text-(--muted)">
-              BUILD: {currentYear} / KE-01
+              BUILD: {currentYear}
             </div>
           </div>
           <div className="reveal delay-1">
@@ -226,9 +221,13 @@ export default function Home() {
             <h1 className="hero-name">
               VINCENT<span>OOKO OCHIENG</span>
             </h1>
-            <p className="eyebrow mb-6">FULL-STACK SOFTWARE ENGINEER</p>
+            <p className="eyebrow mb-6">BACKEND-FOCUSED FULL-STACK SOFTWARE ENGINEER</p>
             <p className="hero-statement">
-              I build the things behind the things.
+              I build reliable web applications, APIs, and data-driven systems.
+            </p>
+            <p className="hero-supporting-copy">
+              Full-stack engineer with a backend focus. Node.js, Express,
+              PostgreSQL, React, and Next.js.
             </p>
           </div>
           <div className="hero-bottom reveal delay-2">
@@ -237,10 +236,10 @@ export default function Home() {
               &middot; PostgreSQL
             </div>
             <a className="action hero-action" href="#work">
-              EXPLORE SYSTEM &rarr;
+              VIEW SELECTED PROJECTS &rarr;
             </a>
             <a className="action hero-action" href="#contact">
-              PING ME &rarr;
+              CONTACT ME &rarr;
             </a>
             <a
               className="action hero-action"
@@ -252,10 +251,8 @@ export default function Home() {
             <div className="diagnostics">
               <span className="section-status">
                 <span className="section-status-dot"></span>
-                status: operational
+                open to software engineering opportunities
               </span>
-              <br />
-              uptime: 2y+
               <br />
               location: KE
             </div>
@@ -265,9 +262,7 @@ export default function Home() {
         <section id="about">
           <div className="eyebrow">01 / ABOUT</div>
           <h2 className="section-title">
-            OPERATING
-            <br />
-            WITH INTENT.
+            ABOUT ME.
           </h2>
           <div className="about-grid">
             <div className="portrait-wrap">
@@ -293,15 +288,16 @@ export default function Home() {
             <div>
               <div className="about-copy">
                 <p>
-                  I build software systems with TypeScript, Node.js, React,
-                  Next.js, databases and modern web technologies.
+                  I’m a Kenya-based software engineer focused on backend and
+                  full-stack development.
                 </p>
                 <p>
-                  The work begins beneath the interface: understanding data
-                  movement, failure paths, performance limits, and the small
-                  decisions that make a system durable. I design full-stack
-                  applications with an equal respect for implementation detail
-                  and product clarity.
+                  I’ve built web experiences and backend projects using
+                  TypeScript, Node.js, PostgreSQL, React, and Next.js. My work
+                  spans understanding a product need, implementing the system,
+                  and refining it through testing and feedback. I’m especially
+                  interested in reliable APIs, data flows, and software that is
+                  straightforward to operate and maintain.
                 </p>
               </div>
               <div className="metadata-list">
@@ -316,43 +312,119 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="system">
-          <div className="eyebrow">02 / THE SYSTEM</div>
+        <section id="experience">
+          <div className="eyebrow">02 / EXPERIENCE & EDUCATION</div>
           <h2 className="section-title">
-            ENGINEERING
-            <br />
-            AS ARCHITECTURE.
+            EXPERIENCE.
           </h2>
-          <ArchitectureDiagram />
+          <div className="timeline">
+            {timelineItems.map(({ year, title, copy }) => (
+              <article className="timeline-row" key={title}>
+                <div className="timeline-year">{year}</div>
+                <div className="timeline-dot"></div>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="eyebrow mt-24 mb-7">CERTIFICATIONS</div>
+          <div className="certs">
+            {certificationItems.map(([title, issuer]) => (
+              <div className="cert" key={title}>
+                <h3>{title}</h3>
+                <p>{issuer}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="eyebrow mt-24 mb-7">ADDITIONAL TOOLS</div>
+          <div className="tooling">
+            {toolingItems.map(([name, description]) => (
+              <div className="tool" key={name}>
+                <h3>{name}</h3>
+                <p>{description}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section id="work">
-          <div className="eyebrow">03 / FEATURED WORK</div>
-          <h2 className="section-title">CASE FILES.</h2>
+          <div className="eyebrow">03 / SELECTED PROJECTS</div>
+          <h2 className="section-title">PROJECTS.</h2>
+          <article className="featured capstone-featured">
+            <div className="featured-copy">
+              <div>
+                <div className="project-num">01 / CAPSTONE PROJECT</div>
+                <h3 className="project-title">MERCHANDISING MANAGEMENT SYSTEM</h3>
+                <p className="project-copy">
+                  A distributed retail platform built with independent domain
+                  services, PostgreSQL, and RabbitMQ. Authentication and
+                  production security work are in progress; there is no live
+                  demo yet.
+                </p>
+              </div>
+              <div className="featured-actions capstone-actions">
+                <a
+                  className="action"
+                  href="https://github.com/ochiengvincent-tech/merchandise-management-system"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  VIEW SOURCE &uarr;
+                </a>
+              </div>
+            </div>
+            <div className="system-preview capstone-preview">
+              <div className="preview-head">
+                <span>SYSTEM MAP / MMS ARCHITECTURE</span>
+                <span className="capstone-status">STATUS: IN PROGRESS</span>
+              </div>
+              <div className="capstone-flow">
+                <div className="flow-box">WEB APP</div>
+                <div className="flow-line"></div>
+                <div className="flow-box">OIDC BFF</div>
+                <div className="flow-line"></div>
+                <div className="flow-box">DOMAIN SERVICES</div>
+              </div>
+              <div className="capstone-infrastructure">
+                <span>POSTGRESQL</span>
+                <span>RABBITMQ EVENTS</span>
+                <span>REDIS SESSIONS</span>
+              </div>
+              <p className="capstone-note">
+                Separate service-owned databases · same-origin authenticated API gateway
+              </p>
+            </div>
+          </article>
+
           <article className="featured">
             <div className="featured-copy">
               <div>
-                <div className="project-num">01 / FEATURED SYSTEM</div>
+                <div className="project-num">02 / BACKEND PROJECT</div>
                 <h3 className="project-title">LOG INGESTION ENGINE</h3>
                 <p className="project-copy">
-                  Distributed log ingestion infrastructure designed to absorb
-                  burst traffic, preserve delivery, and expose the behavior of a
-                  busy system.
+                  A Node.js service that accepts bursts of log events, queues
+                  work, and writes events to a database through background
+                  workers. The project explores rate limiting, retries, and
+                  reliable delivery under load.
                 </p>
               </div>
               <div>
                 <div className="metrics">
                   <div className="metric">
                     <b>1,385</b>
-                    <span>REQ / SECOND</span>
+                    <span>REQUESTS / SECOND*</span>
                   </div>
                   <div className="metric">
                     <b>0</b>
-                    <span>FAILURES</span>
+                    <span>FAILED DELIVERIES*</span>
                   </div>
                   <div className="metric">
                     <b>1101ms</b>
-                    <span>P95 LATENCY</span>
+                    <span>P95 LATENCY*</span>
                   </div>
                 </div>
                 <div className="featured-actions">
@@ -367,6 +439,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+              <p className="project-footnote">*Reported from the project’s load test; see the README for test setup and conditions.</p>
             </div>
             <div
               className="system-preview"
@@ -374,7 +447,7 @@ export default function Home() {
             >
               <div className="preview-head">
                 <span>SYSTEM MAP / INGESTION PIPELINE</span>
-                <span className="section-status">STATUS: HEALTHY</span>
+                <span className="capstone-status">STATUS: COMPLETE</span>
               </div>
               <div className="flow">
                 <div className="flow-box">CLIENT</div>
@@ -409,69 +482,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="lab">
-          <div className="eyebrow">04 / LAB</div>
+        <section id="system">
+          <div className="eyebrow">04 / ENGINEERING APPROACH</div>
           <h2 className="section-title">
-            SMALLER
-            <br />
-            QUESTIONS.
+            TOOLS FOR THE JOB.
           </h2>
-          <div className="lab-list">
-            {labItems.map(([id, name, status]) => (
-              <div className="lab-row" key={id}>
-                <span>{id}</span>
-                <div>{name}</div>
-                <span className="section-status">{status}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="experience">
-          <div className="eyebrow">05 / EXPERIENCE</div>
-          <h2 className="section-title">
-            TIME IN
-            <br />
-            THE SYSTEM.
-          </h2>
-          <div className="timeline">
-            {timelineItems.map(({ year, title, copy }) => (
-              <article className="timeline-row" key={title}>
-                <div className="timeline-year">{year}</div>
-                <div className="timeline-dot"></div>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="eyebrow mt-24 mb-7">CERTIFICATIONS</div>
-          <div className="certs">
-            {certificationItems.map(([title, issuer]) => (
-              <div className="cert" key={title}>
-                <h3>{title}</h3>
-                <p>{issuer}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="eyebrow mt-24 mb-7">TOOLING</div>
-          <div className="tooling">
-            {toolingItems.map(([name, description]) => (
-              <div className="tool" key={name}>
-                <h3>{name}</h3>
-                <p>{description}</p>
-              </div>
-            ))}
-          </div>
+          <ArchitectureDiagram />
         </section>
 
         <section id="contact" className="contact">
-          <div className="eyebrow">06 / CONTACT</div>
+          <div className="eyebrow">05 / CONTACT</div>
           <h2>
-            HAVE SOMETHING <span>WORTH BUILDING?</span>
+            LET’S TALK ABOUT <span>YOUR TEAM.</span>
           </h2>
           <div className="contact-grid">
             <ContactForm />
@@ -495,6 +517,7 @@ export default function Home() {
             </aside>
           </div>
         </section>
+
       </main>
 
       <footer>

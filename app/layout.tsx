@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const siteUrl =
@@ -11,10 +12,13 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const spaceMono = localFont({
+  src: [
+    { path: "./fonts/space-mono-latin-400.woff2", weight: "400" },
+    { path: "./fonts/space-mono-latin-700.woff2", weight: "700" },
+  ],
   variable: "--font-space-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

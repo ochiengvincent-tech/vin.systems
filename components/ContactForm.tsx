@@ -37,7 +37,7 @@ export default function ContactForm() {
     <form className="contact-form" onSubmit={handleSubmit}>
       <label>
         <span>YOUR NAME</span>
-        <input name="name" type="text" placeholder="NAME" required />
+        <input name="name" type="text" placeholder="Your name" required />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
       </label>
       <label>
@@ -45,7 +45,7 @@ export default function ContactForm() {
         <input
           name="email"
           type="email"
-          placeholder="EMAIL@EXAMPLE.COM"
+          placeholder="youremail@example.com"
           required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -54,7 +54,7 @@ export default function ContactForm() {
         <span>MESSAGE</span>
         <textarea
           name="message"
-          placeholder="TELL ME ABOUT THE SYSTEM"
+          placeholder="Tell me a little about what you’d like to discuss..."
           rows={5}
           required
         />
