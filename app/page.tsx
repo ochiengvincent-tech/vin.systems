@@ -365,9 +365,8 @@ export default function Home() {
                 <h3 className="project-title">MERCHANDISING MANAGEMENT SYSTEM</h3>
                 <p className="project-copy">
                   A distributed retail platform built with independent domain
-                  services, PostgreSQL, and RabbitMQ. Authentication and
-                  production security work are in progress; there is no live
-                  demo yet.
+                  services, PostgreSQL, and RabbitMQ. The capstone project is
+                  complete; there is no live demo yet.
                 </p>
               </div>
               <div className="featured-actions capstone-actions">
@@ -386,7 +385,7 @@ export default function Home() {
             <div className="system-preview capstone-preview">
               <div className="preview-head">
                 <span>SYSTEM MAP / MMS ARCHITECTURE</span>
-                <span className="capstone-status">STATUS: IN PROGRESS</span>
+                <span className="capstone-status">STATUS: COMPLETE</span>
               </div>
               <div className="capstone-flow">
                 <div className="flow-box">WEB APP</div>
