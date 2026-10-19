@@ -1,4 +1,4 @@
-import { FileText, Mail, MessageCircle, Phone, Shield } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -51,8 +51,6 @@ const workItems = [
   },
 ];
 
-
-
 const timelineItems = [
   {
     year: "SEP 2025–SEP 2026",
@@ -85,6 +83,8 @@ const toolingItems = [
   ["Bash Scripting", "AUTOMATION + CLI"],
 ];
 
+const heroStack = ["TypeScript", "Node.js", "PostgreSQL", "React", "Next.js"];
+
 function GithubIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -98,6 +98,72 @@ function LinkedInIcon() {
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M5.2 8.4H2.7V21h2.5V8.4ZM4 3A1.5 1.5 0 1 0 4 6a1.5 1.5 0 0 0 0-3ZM9 8.4H6.6V21H9v-6.3c0-1.7.3-3.3 2.4-3.3 2 0 2 1.9 2 3.4V21h2.5v-6.9c0-3.4-.7-6-4.5-6A4.4 4.4 0 0 0 9 9.8v-1.4Z" />
     </svg>
+  );
+}
+
+function JsonKey({ name }: { name: string }) {
+  return <span className="hero-terminal-key">{`"${name}"`}</span>;
+}
+
+function JsonString({ value }: { value: string }) {
+  return <span>{`"${value}"`}</span>;
+}
+
+function HeroTerminal() {
+  return (
+    <div className="hero-terminal reveal delay-2">
+      <div className="hero-terminal-bar">
+        <span>GET /api/engineer</span>
+        <span>
+          <span className="status-dot"></span>
+          200 OK
+        </span>
+      </div>
+      <div className="hero-terminal-body">
+        <div>
+          <span className="hero-terminal-muted">$ </span>
+          curl -i vin.systems/api/engineer
+        </div>
+        <div className="hero-terminal-gap hero-terminal-muted">
+          HTTP/1.1 200 OK
+        </div>
+        <div className="hero-terminal-gap hero-terminal-muted">
+          content-type: application/json
+        </div>
+        <div className="hero-terminal-gap">{"{"}</div>
+        <div className="hero-terminal-indent">
+          <JsonKey name="name" />: <JsonString value="Vincent Ooko Ochieng" />,
+        </div>
+        <div className="hero-terminal-indent">
+          <JsonKey name="role" />:{" "}
+          <JsonString value="backend-focused full-stack engineer" />,
+        </div>
+        <div className="hero-terminal-indent">
+          <JsonKey name="location" />: <JsonString value="Kenya" />,
+        </div>
+        <div className="hero-terminal-indent">
+          <JsonKey name="stack" />: [
+          {heroStack.map((item, index) => (
+            <span key={item}>
+              <JsonString value={item} />
+              {index < heroStack.length - 1 ? ", " : ""}
+            </span>
+          ))}
+          ],
+        </div>
+        <div className="hero-terminal-indent">
+          <JsonKey name="status" />: <JsonString value="open_to_work" />,
+        </div>
+        <div className="hero-terminal-indent">
+          <JsonKey name="remote" />: true
+        </div>
+        <div>{"}"}</div>
+        <div className="hero-terminal-gap">
+          <span className="hero-terminal-muted">$ </span>
+          <span className="hero-terminal-cursor">▌</span>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -149,40 +215,6 @@ const directChannelLinks: LinkItem[] = [
   },
 ];
 
-const footerLinks: LinkItem[] = [
-  {
-    label: "GitHub",
-    href: "https://github.com/ochiengvincent-tech",
-    icon: <GithubIcon />,
-    external: true,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/vincent-ochieng-406076257/",
-    icon: <LinkedInIcon />,
-    external: true,
-  },
-  {
-    label: "Download Resume",
-    href: resumeHref,
-    icon: <FileText size={14} strokeWidth={1.8} />,
-    download: "Vincent-Ooko-Ochieng-CV.pdf",
-  },
-  {
-    label: "Email",
-    href: emailLink,
-    icon: <Mail size={14} strokeWidth={1.8} />,
-    external: true,
-  },
-  {
-    label: "WhatsApp",
-    href: whatsappLink,
-    icon: <MessageCircle size={14} strokeWidth={1.8} />,
-    ariaLabel: "Message Vincent on WhatsApp",
-    external: true,
-  },
-];
-
 export default function Home() {
   return (
     <div className="system-shell">
@@ -204,7 +236,7 @@ export default function Home() {
           <SectionNav />
           <div className="nav-status mono text-[10px] flex items-center">
             <span className="status-dot"></span>
-            <span>status: running</span>
+            <span>200 OK</span>
             <ThemeToggle />
           </div>
         </nav>
@@ -212,62 +244,43 @@ export default function Home() {
 
       <main>
         <section id="top" className="hero">
-          <div className="hero-top reveal">
-            <div className="eyebrow">SOFTWARE ENGINEER · KENYA</div>
-            <div className="build-meta mono text-[10px] text-(--muted)">
-              BUILD: {currentYear}
+          <div className="hero-grid">
+            <div className="reveal">
+              <p className="eyebrow mb-6">
+                BACKEND-FOCUSED FULL-STACK SOFTWARE ENGINEER
+              </p>
+              <h1 className="hero-name">
+                VINCENT<span>OOKO OCHIENG</span>
+              </h1>
+              <p className="hero-statement">
+                I build reliable web applications, APIs, and data-driven
+                systems.
+              </p>
+              <div className="hero-cta">
+                <TrackedLink
+                  className="action action-primary hero-action"
+                  href={resumeHref}
+                  download="Vincent-Ooko-Ochieng-CV.pdf"
+                  event="resume_downloaded"
+                  properties={{ placement: "hero" }}
+                >
+                  DOWNLOAD RESUME &darr;
+                </TrackedLink>
+                <a className="action hero-action" href="#work">
+                  VIEW SELECTED PROJECTS &rarr;
+                </a>
+                <a className="action hero-action" href="#contact">
+                  CONTACT ME &rarr;
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="reveal delay-1">
-            <div className="hero-brand">vin.systems</div>
-            <h1 className="hero-name">
-              VINCENT<span>OOKO OCHIENG</span>
-            </h1>
-            <p className="eyebrow mb-6">BACKEND-FOCUSED FULL-STACK SOFTWARE ENGINEER</p>
-            <p className="hero-statement">
-              I build reliable web applications, APIs, and data-driven systems.
-            </p>
-            <p className="hero-supporting-copy">
-              Full-stack engineer with a backend focus. Node.js, Express,
-              PostgreSQL, React, and Next.js.
-            </p>
-          </div>
-          <div className="hero-bottom reveal delay-2">
-            <div className="tech-line">
-              TypeScript &middot; React &middot; Next.js &middot; Node.js
-              &middot; PostgreSQL
-            </div>
-            <a className="action hero-action" href="#work">
-              VIEW SELECTED PROJECTS &rarr;
-            </a>
-            <a className="action hero-action" href="#contact">
-              CONTACT ME &rarr;
-            </a>
-            <TrackedLink
-              className="action hero-action"
-              href={resumeHref}
-              download="Vincent-Ooko-Ochieng-CV.pdf"
-              event="resume_downloaded"
-              properties={{ placement: "hero" }}
-            >
-              DOWNLOAD RESUME &darr;
-            </TrackedLink>
-            <div className="diagnostics">
-              <span className="section-status">
-                <span className="section-status-dot"></span>
-                open to software engineering opportunities
-              </span>
-              <br />
-              location: KE
-            </div>
+            <HeroTerminal />
           </div>
         </section>
 
         <section id="about">
           <div className="eyebrow">01 / ABOUT</div>
-          <h2 className="section-title">
-            ABOUT ME.
-          </h2>
+          <h2 className="section-title">ABOUT ME.</h2>
           <div className="about-grid">
             <div className="portrait-wrap">
               <Image
@@ -318,9 +331,7 @@ export default function Home() {
 
         <section id="experience">
           <div className="eyebrow">02 / EXPERIENCE & EDUCATION</div>
-          <h2 className="section-title">
-            EXPERIENCE.
-          </h2>
+          <h2 className="section-title">EXPERIENCE.</h2>
           <div className="timeline">
             {timelineItems.map(({ year, title, copy }) => (
               <article className="timeline-row" key={title}>
@@ -362,7 +373,9 @@ export default function Home() {
             <div className="featured-copy">
               <div>
                 <div className="project-num">01 / CAPSTONE PROJECT</div>
-                <h3 className="project-title">MERCHANDISING MANAGEMENT SYSTEM</h3>
+                <h3 className="project-title">
+                  MERCHANDISING MANAGEMENT SYSTEM
+                </h3>
                 <p className="project-copy">
                   A distributed retail platform built with independent domain
                   services, PostgreSQL, and RabbitMQ. The capstone project is
@@ -400,7 +413,8 @@ export default function Home() {
                 <span>REDIS SESSIONS</span>
               </div>
               <p className="capstone-note">
-                Separate service-owned databases · same-origin authenticated API gateway
+                Separate service-owned databases · same-origin authenticated API
+                gateway
               </p>
             </div>
           </article>
@@ -446,7 +460,10 @@ export default function Home() {
                   </TrackedLink>
                 </div>
               </div>
-              <p className="project-footnote">*Reported from the project’s load test; see the README for test setup and conditions.</p>
+              <p className="project-footnote">
+                *Reported from the project’s load test; see the README for test
+                setup and conditions.
+              </p>
             </div>
             <div
               className="system-preview"
@@ -482,7 +499,12 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   event="project_source_opened"
-                  properties={{ project: title.toLowerCase().replaceAll("-", "_").replaceAll(" ", "_") }}
+                  properties={{
+                    project: title
+                      .toLowerCase()
+                      .replaceAll("-", "_")
+                      .replaceAll(" ", "_"),
+                  }}
                 >
                   GITHUB &uarr;
                 </TrackedLink>
@@ -493,9 +515,7 @@ export default function Home() {
 
         <section id="system">
           <div className="eyebrow">04 / ENGINEERING APPROACH</div>
-          <h2 className="section-title">
-            TOOLS FOR THE JOB.
-          </h2>
+          <h2 className="section-title">TOOLS FOR THE JOB.</h2>
           <ArchitectureDiagram />
         </section>
 
@@ -517,7 +537,10 @@ export default function Home() {
                   aria-label={link.ariaLabel}
                   event="contact_channel_opened"
                   properties={{
-                    contact_method: link.label === "07276664787" ? "phone" : link.label.toLowerCase(),
+                    contact_method:
+                      link.label === "07276664787"
+                        ? "phone"
+                        : link.label.toLowerCase(),
                     placement: "contact_section",
                   }}
                   key={link.label}
@@ -531,52 +554,26 @@ export default function Home() {
             </aside>
           </div>
         </section>
-
       </main>
 
       <footer>
-        <div className="footer-brand">
-          <Image
-            className="brand-logo"
-            src="/favicon-32x32.png"
-            alt=""
-            width={16}
-            height={16}
-          />
-          <span>vin.systems &middot; {currentYear}</span>
-        </div>
-        <div className="footer-links">
-          {footerLinks.map((link) => (
+        <div className="footer-row">
+          <span>© {currentYear} Vincent Ooko Ochieng</span>
+          <div className="footer-links">
             <TrackedLink
-              href={link.href}
-              download={link.download}
-              target={link.external ? "_blank" : undefined}
-              rel={link.external ? "noopener noreferrer" : undefined}
-              aria-label={link.ariaLabel}
-              event={link.download ? "resume_downloaded" : "contact_channel_opened"}
-              properties={
-                link.download
-                  ? { placement: "footer" }
-                  : { contact_method: link.label.toLowerCase(), placement: "footer" }
-              }
-              key={link.label}
+              href={resumeHref}
+              download="Vincent-Ooko-Ochieng-CV.pdf"
+              event="resume_downloaded"
+              properties={{ placement: "footer" }}
             >
-              <span className="link-icon" aria-hidden="true">
-                {link.icon}
-              </span>
-              <span>{link.label}</span>
+              Download Resume
             </TrackedLink>
-          ))}
-          <Link href="/privacy">
-            <span className="link-icon" aria-hidden="true">
-              <Shield size={14} strokeWidth={1.8} />
-            </span>
-            <span>PRIVACY</span>
-          </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/privacy">Privacy</Link>
+          </div>
         </div>
-        <div className="section-status">
-          <span className="section-status-dot"></span>
-          operational / build: {currentYear} / location: KE
+        <div className="footer-exit" aria-hidden="true">
+          $ exit
         </div>
       </footer>
     </div>
