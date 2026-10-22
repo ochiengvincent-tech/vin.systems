@@ -14,7 +14,8 @@ import Image from "next/image";
 
 const email = "ookovincent616@gmail.com";
 const emailLink = `mailto:${email}`;
-const whatsappLink = "https://wa.me/254727664787";
+const phoneNumber = "+254727664787";
+const whatsappLink = `https://wa.me/${phoneNumber.slice(1)}`;
 const resumeHref = "/Vincent-Ooko-Ochieng-CV.pdf";
 const currentYear = new Date().getFullYear();
 
@@ -186,8 +187,8 @@ const directChannelLinks: LinkItem[] = [
     external: true,
   },
   {
-    label: "07276664787",
-    href: "tel:07276664787",
+    label: phoneNumber,
+    href: `tel:${phoneNumber}`,
     icon: <Phone size={14} strokeWidth={1.8} />,
     ariaLabel: "Call Vincent",
     className: "contact-phone",
@@ -538,7 +539,7 @@ export default function Home() {
                   event="contact_channel_opened"
                   properties={{
                     contact_method:
-                      link.label === "07276664787"
+                      link.href === `tel:${phoneNumber}`
                         ? "phone"
                         : link.label.toLowerCase(),
                     placement: "contact_section",
