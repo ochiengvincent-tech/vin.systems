@@ -283,12 +283,6 @@ body.light-mode .capstone-note {
   color: #4f5652;
 }
 
-body.light-mode .capstone-status {
-  color: #704600;
-  border-color: rgba(112, 70, 0, 0.3);
-  background: rgba(176, 112, 0, 0.12);
-}
-
 body.light-mode .flow-line {
   background: var(--signal);
 }
@@ -1157,19 +1151,6 @@ section {
 .capstone-preview {
   gap: 30px;
   min-height: 500px;
-}
-
-.capstone-status {
-  display: inline-block;
-  padding: 5px 8px;
-  border: 1px solid rgba(245, 185, 66, 0.48);
-  background: rgba(245, 185, 66, 0.1);
-  color: #ffd166;
-  font:
-    700 10px/1.2 var(--font-space-mono),
-    monospace;
-  letter-spacing: 0.06em;
-  text-shadow: 0 0 8px rgba(245, 185, 66, 0.18);
 }
 
 .capstone-flow {
@@ -2137,7 +2118,7 @@ footer {
   }
 
   .system-preview .preview-head .section-status,
-  .capstone-preview .capstone-status {
+  .capstone-preview .preview-head .section-status {
     white-space: nowrap;
   }
 

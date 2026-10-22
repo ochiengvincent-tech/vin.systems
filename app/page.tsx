@@ -399,7 +399,6 @@ export default function Home() {
             <div className="system-preview capstone-preview">
               <div className="preview-head">
                 <span>SYSTEM MAP / MMS ARCHITECTURE</span>
-                <span className="capstone-status">STATUS: COMPLETE</span>
               </div>
               <div className="capstone-flow">
                 <div className="flow-box">WEB APP</div>
@@ -472,7 +471,6 @@ export default function Home() {
             >
               <div className="preview-head">
                 <span>SYSTEM MAP / INGESTION PIPELINE</span>
-                <span className="capstone-status">STATUS: COMPLETE</span>
               </div>
               <div className="flow">
                 <div className="flow-box">CLIENT</div>
